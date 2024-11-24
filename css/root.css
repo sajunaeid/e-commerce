@@ -1,0 +1,21 @@
+:root{
+    /* nav bar */
+    --nav-black: #262626; 
+    --nav-red: #BC1E30;
+    --nav-green: #4CAF50;
+    --nav-orange: #FF5C00;
+    --nav-white: #ffffff;
+    --nav-gray: #efeeee;
+    --nav-deepgray: #808080;
+    --nav-none: #00000000;
+
+    /* section divider */
+    --black: #262626; 
+    --red: #BC1E30;
+    --green: #4CAF50;
+    --orange: #FF5C00;
+    --white: #ffffff;
+    --gray: #efeeee;
+    --deepgray: #808080;
+    --none: #00000000;
+}

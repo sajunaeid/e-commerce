@@ -1,0 +1,124 @@
+/* 
+    <div class="section-divider-right">
+        <div class="red-line-right"></div>
+        <div class="whitebox-right"></div>
+        <div class="triangle-right"></div>
+    </div> 
+*/
+
+
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-left: 1.1vw solid transparent;
+    border-right: 1.1vw solid transparent;
+    border-bottom: 2vw solid var(--red);
+    animation: rotate-right 5s linear infinite;
+    margin-left: 69vw;
+    margin-top: -2vw;
+    transform-origin: 50% 59%;
+}
+
+@keyframes rotate-right {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.section-divider-right{
+    margin-bottom: 6vw;
+    margin-top: 6vw;
+}
+
+.red-line-right{
+    background-color: var(--red);
+    width: 100%;
+    min-height: 0.3vw;
+}
+
+.whitebox-right{
+    background-color: var(--white);
+    width: 4.9vw;
+    aspect-ratio: 1/0.3;
+    margin-left: 67.6vw;
+    margin-top: -0.8vw;
+}
+
+/* 
+    <div class="section-divider-left">
+        <div class="red-line-left"></div>
+        <div class="whitebox-left"></div>
+        <div class="triangle-left"></div>
+    </div>
+*/
+
+
+
+
+.triangle-left{
+    width: 0;
+    height: 0;
+    border-left: 1.1vw solid transparent;
+    border-right: 1.1vw solid transparent;
+    border-bottom: 2vw solid var(--red);
+    animation: rotate-left 5s linear infinite;
+    margin-left: 31vw;
+    margin-top: -2vw;
+    transform-origin: 50% 59%;
+}
+
+@keyframes rotate-left {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.section-divider-left{
+    margin-bottom: 6vw;
+    margin-top: 6vw;
+}
+
+.red-line-left{
+    background-color: var(--red);
+    width: 100%;
+    min-height: 0.3vw;
+}
+
+.whitebox-left{
+    background-color: var(--white);
+    width: 4.9vw;
+    aspect-ratio: 1/0.3;
+    margin-left: 29.8vw;
+    margin-top: -0.8vw;
+}
+
+
+
+
+/* RWD */
+
+@media (max-width: 768px){
+    .triangle-right, .triangle-left{
+        border-left: 2vw solid transparent;
+        border-right: 2vw solid transparent;
+        border-bottom: 3.7vw solid var(--red);
+    }
+
+    .red-line-right, .red-line-left{
+        height: 0.6vw;
+    }
+
+    .whitebox-left, .whitebox-right{
+        width: 7vw;
+    }
+
+    .triangle-right, .triangle-left{
+        margin-top: -3.5vw;
+    }
+}

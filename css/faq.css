@@ -1,0 +1,100 @@
+/* Styling the FAQ section */
+.faq-section {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    font-family: var(--roboto);
+    border: 0.2vw solid var(--gray);
+    border-radius: 2vw;
+    box-shadow: 10px 10px 10px var(--gray);
+}
+
+/* FAQ Item */
+.faq-item {
+    margin-bottom: 10px;
+    border: 0.2vw solid var(--gray);
+    position: relative; 
+    border-radius: 1.5vw; 
+}
+
+.faq-item:hover {
+    margin-bottom: 10px;
+    border: 0.2vw solid var(--gray);
+    position: relative; 
+    border-radius: 1.5vw; 
+    background-color: var(--red);
+    transition: color 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+.faq-item:hover .faq-question{
+    color: var(--white);
+}
+
+/* FAQ Question */
+.faq-question {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 0;
+    transition: color 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease; 
+    position: relative;
+    color: var(--black);        
+    padding-right: 30px;    
+    border-radius: 1.5vw;
+}
+
+/* FAQ Answer */
+.faq-answer {
+    display: none;
+    padding: 10px 0;
+    color: #555;
+    transition: color 0.5s ease;
+}
+
+/* Triangle Arrow */
+.arrow {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid var(--black);
+    position: absolute;
+    right: 1vw; 
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.5s ease, border-top-color 0.5s ease; 
+}
+
+/* Expanded state */
+.faq-item.active .faq-answer {
+    display: block;
+    transition: max-height 0.5s ease;
+}
+
+
+.faq-item.active .arrow {
+    transform: translateY(-50%) rotate(180deg);
+    border-top-color: var(--white);
+}
+
+.faq-item.active .faq-question{
+    background-color: var(--red);
+    color: var(--white);
+    border-radius: 10px 10px 0 0 ;
+}
+.faq-item.active .faq-answer {
+    background-color: var(--red);
+    color: var(--white);
+    border-radius: 0 0 10px 10px;
+}
+
+.faq-item.active .faq-question {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.faq-item.active .faq-answer {
+    color: var(--white);
+}
+
+.faq-question, .faq-answer {
+    padding: 10px 15px;
+    margin: 0;
+}

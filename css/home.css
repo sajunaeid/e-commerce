@@ -1,0 +1,11 @@
+.home-image {
+    background-color: gray;
+    height: 70vh;
+    width: 100%;
+}
+
+.section-title{
+    text-align: center;
+    text-decoration: none;
+    color: var(--black);
+}

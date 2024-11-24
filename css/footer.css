@@ -1,0 +1,26 @@
+.footer{
+    background-color: var(--black);
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.back-to-top{
+    background-color: var(--red);
+    width: 18vw;
+    aspect-ratio: 6/1;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.5vw;
+    font-family: var(--roboto);
+    border-radius: 100px;
+    margin: 20px auto;
+    border: 3px solid var(--white);
+}
+
+.back-to-top:hover{
+    scale: 1.05;
+    transition: all 0.3s ease-in-out;
+}
+

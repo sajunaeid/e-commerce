@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/* Styling the main navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;;
+    background-color: var(--nav-gray);
+    padding: 5px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 52px;
+    box-shadow: 0px 1.8px 3px black;
+}
+
+/* Styling for the logo */
+.logo {
+    color: white;
+    max-height: 45px;
+    text-decoration: none;
+}
+
+/* Message that appears on hovering the logo */
+.logo-hover-msg::after {
+    content: "Go To Home Page";
+    position: absolute;
+    transform: translateX(-100%);
+    bottom: -30px;
+    background-color: var(--nav-black);
+    color: var(--nav-white );
+    padding: 5px 10px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    border-radius: 5px;
+    pointer-events: none; /* Avoid blocking hover effect */
+}
+
+/* Show the message when the logo is hovered */
+.logo-hover-msg:hover::after {
+    opacity: 0.8;
+    visibility: visible;
+    z-index: 999;
+}
+
+/* Styling the nav links container */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+/* Styling individual nav list items */
+.nav-links li {
+    margin: 0 15px;
+}
+
+/* Styling for the links inside the navbar */
+.nav-links a {
+    color: var(--nav-black);
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+/* Styling for the nav link hover effect */
+.nav-links a:hover {
+    color: var(--nav-white);
+    background-color: var(--nav-deepgray);
+    padding: 3px 22px;
+    border-radius: 50px;
+}
+
+/* Hamburger toggle button styles */
+.toggle {
+    display: none; /* Hidden by default (shown in responsive view) */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+/* Hamburger bar animation */
+.bar {
+    height: 3px;
+    width: 30px; /* Slightly increase the width */
+    background-color: var(--nav-black);
+    margin: 3px 0; /* Space between bars */
+    border-radius: 5px; /* Make the bars rounded for a smoother look */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smoother animation */
+}
+/* Top bar */
+.toggle.active .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg) scale(1.2); /* Added scale for cool effect */
+}
+
+/* Middle bar */
+.toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+/* Bottom bar */
+.toggle.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg) scale(1.2); /* Added scale for cool effect */
+}
+
+/* Background blur effect when navbar is open */
+body.blur {
+    overflow: hidden; /* Prevent scrolling for the body when navbar is open */
+}
+
+body.blur::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(5px); /* Adds background blur */
+    z-index: 999; /* Below the navbar but above the content */
+}
+
+/* Responsive style */
+@media only screen and (max-width: 1000px) {
+
+    /* Styling the nav links container in responsive mode */
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 50px; /* Positioning below the navbar */
+        right: 0;
+        width: 100%;
+        gap: 15px; /* Add space between links */
+        align-items: center; /* Center links horizontally */
+        height: auto;
+        min-height: 35vh;
+        max-height: 70vh;
+        overflow-y: auto; /* Enable scrolling if content exceeds max height */
+        background-color: var(--nav-white);
+        border-radius: 0px 0px 15px 15px;
+        box-shadow: 0px 2px 4px var(--nav-black);
+        opacity: 0; /* this is added for nav links animation part */
+    }
+    
+    .nav-links.active {
+        display: flex;
+        justify-content: center;
+        /* animation */
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s ease;
+    }
+
+    .nav-links:not(.active) {
+        visibility: hidden; /* Hides nav links when not active */
+    }
+    
+
+    /* Changing the link colors */
+    .nav-links a {
+        color: var(--nav-black);
+        font-size: 18px;
+        text-decoration: none;
+    }
+
+    /* Show the hamburger icon in responsive mode */
+    .toggle {
+        display: flex; /* Display the hamburger icon */
+    }
+}
